@@ -1,30 +1,33 @@
 <resources>
-    <string name="app_name">Informasi Ban</string>
-    <string name="app_intro">Kami akan membantu mencarikan rekomendasi ban untukmu.\n\nMasukkan merek ban:</string>
-    <string name="pilih_tipe">Pilih tipe ban:</string>
+    <string name="app_name">Rekomendasi ban</string>
+    <string name="app_intro">Kami akan membantu mencarikan pilihan ban untukmu.\n\nMasukkan merek ban:</string>
+    <string name="pilih_jenis">Pilih jenis ban:</string>
     <string name="merek_ban">Merek (Corsa atau Pirelli)</string>
     <string name="ban_standar">Standar</string>
-    <string name="ban_racing">Racing</string>
+    <string name="ban_racing">Balap</string>
     <string name="cari_ban">Cari</string>
     <string name="tentang_aplikasi">Tentang Aplikasi</string>
-    <string name="copyright">Aplikasi ini dibuat untuk memudahkan pengguna yang sedang mencari ban motor. Aplikasi akan menampilkan beberapa rekomendasi ban yang relevan merdasarkan inputan merek dan tipe mobil (standar atau racing) yang telah dimasukkan olehpengguna.\n\nCopyright © 2024 Mochamad Fahmi K.\nAll rights reserved.</string>
+    <string name="copyright">Aplikasi ini dibuat untuk memudahkan pengguna yang sedang mencari ban motor. Aplikasi akan menampilkan beberapa pilihan ban yang relevan merdasarkan inputan merek dan jenis ban (standar atau racing) yang telah dimasukkan oleh pengguna.\n\nCopyright © 2024 Mochamad Fahmi K.\nAll rights reserved.</string>
     <string name="kembali">Kembali</string>
     <string name="corsa_racing">PILIHAN BAN CORSA RACING\n</string>
-    <string name="isi_corsa_racing"> 1.Corsa R26\n
-    2.Corsa R46\n
-    3.Corsa R93</string>
-    <string name="corsa_standar">REKOMENDASI BAN CORSA STANDAR\n</string>
-    <string name="isi_corsa_standar"> 1.Ecomax H01\n
+    <string name="isi_corsa_racing">
+        1.Corsa R26\n
+        2.Corsa R46\n
+        3.Corsa R93</string>
+    <string name="corsa_standar">PILIHAN BAN CORSA STANDAR\n</string>
+    <string name="isi_corsa_standar">
+        1.Ecomax H01\n
         2. Planeto XE-30\n
         3. B-Track</string>
-    <string name="Pirelli_racing">REKOMNEDASI BAN PIRELLI RACING\n</string>
-    <string name="isi_Pirelli_racing">1.Pirelli Diablo Rosso Corsa\n
-    2.Pirelli Diablo Super Corsa\n
-    3.Pirelli Diablo Rosso III</string>
-    <string name="Pirelli_standar">REKOMENDASI BAN PIRELLI STANDAR\n</string>
-    <string name="isi_Pirelli_standar">1.Pirelli Scorpion MX Extra J \n
+    <string name="Pirelli_racing">PILIHAN BAN PIRELLI RACING\n</string>
+    <string name="isi_Pirelli_racing">
+        1.Pirelli Diablo Rosso Corsa\n
+        2.Pirelli Diablo Super Corsa\n
+        3.Pirelli Diablo Rosso III</string>
+    <string name="Pirelli_standar">PILIHAN BAN PIRELLI STANDAR\n</string>
+    <string name="isi_Pirelli_standar">
+        1.Pirelli Scorpion MX Extra J \n
         2.Pirelli MT75\n
         3.Pirelli Angel City</string>
     <string name="bagikan">Bagikan</string>
-
 </resources>

@@ -82,11 +82,11 @@ fun MainScreen(navController: NavHostController){
 @Composable
 fun ScreenContent(modifier: Modifier) {
     var merek by rememberSaveable { mutableStateOf("") }
-    var tipe by rememberSaveable { mutableStateOf("") }
-    var Rekomendasi1 by rememberSaveable { mutableStateOf(false) }
-    var Rekomendasi2 by rememberSaveable { mutableStateOf(false) }
-    var Rekomendasi3 by rememberSaveable { mutableStateOf(false) }
-    var Rekomendasi4 by rememberSaveable { mutableStateOf(false) }
+    var jenis by rememberSaveable { mutableStateOf("") }
+    var Pilihan1 by rememberSaveable { mutableStateOf(false) }
+    var Pilihan2 by rememberSaveable { mutableStateOf(false) }
+    var Pilihan3 by rememberSaveable { mutableStateOf(false) }
+    var Pilihan4 by rememberSaveable { mutableStateOf(false) }
 
     var isInputValid by rememberSaveable { mutableStateOf(true) }
 
@@ -121,7 +121,7 @@ fun ScreenContent(modifier: Modifier) {
             singleLine = true,
             modifier = Modifier.fillMaxWidth(),
         )
-        Text(text = stringResource(id = R.string.pilih_tipe), style = MaterialTheme.typography.bodyLarge,
+        Text(text = stringResource(id = R.string.pilih_jenis), style = MaterialTheme.typography.bodyLarge,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(top = 20.dp))
@@ -137,43 +137,42 @@ fun ScreenContent(modifier: Modifier) {
                 Row(
                     modifier = Modifier
                         .selectable(
-                            selected = merek == text,
+                            selected = jenis == text, // Menggunakan jenis sebagai pembanding
                             onClick = {
-                                tipe = text
+                                jenis = text // Mengatur jenis berdasarkan text yang dipilih
                             },
                             role = Role.RadioButton
                         )
                         .weight(1f)
                         .padding(16.dp)
                 ) {
-                    RadioButton(selected = tipe == text, onClick = null)
+                    RadioButton(selected = jenis == text, onClick = null)
                     Text(text = text)
                 }
             }
         }
 
-        // Button menampilkan rekomendasi
+        // Button menampilkan pilihan
         Button(
             onClick = {
                 // Reset input validation
                 isInputValid = true
 
                 // Validate input
-                if (merek.isEmpty() || tipe.isEmpty()) {
+                if (merek.isEmpty() || jenis.isEmpty()) {
                     isInputValid = false
                 } else {
-                    // Show recommendations based on input
-                    Rekomendasi1 = (merek.lowercase() == "corsa" && tipe.lowercase() == "racing")
-                    Rekomendasi2 = (merek.lowercase() == "corsa" && tipe.lowercase() == "standar")
-                    Rekomendasi3 = (merek.lowercase() == "Pirelli" && tipe.lowercase() == "racing")
-                    Rekomendasi4 = (merek.lowercase() == "Pirelli" && tipe.lowercase() == "standar")
+                    // Menampilkan pilihan sesuai inputan
+                    Pilihan1 = (merek.lowercase() == "corsa" && jenis.lowercase() == "racing")
+                    Pilihan2 = (merek.lowercase() == "corsa" && jenis.lowercase() == "standard")
+                    Pilihan3 = (merek.lowercase() == "pirelli" && jenis.lowercase() == "racing")
+                    Pilihan4 = (merek.lowercase() == "pirelli" && jenis.lowercase() == "standard")
                 }
             },
             modifier = Modifier.padding(top = 20.dp)
         ) {
             Text(text = stringResource(R.string.cari_ban))
         }
-
         // Show input validation message if input is not valid
         if (!isInputValid) {
             Text(
@@ -185,19 +184,18 @@ fun ScreenContent(modifier: Modifier) {
         }
 
         // Recommendations section
-        if (Rekomendasi1) {
+        if (Pilihan1) {
             CorsaRacing()
         }
-        if (Rekomendasi2){
+        if (Pilihan2) {
             CorsaStandar()
         }
-        if (Rekomendasi3) {
+        if (Pilihan3) {
             PirelliRacing()
         }
-        if (Rekomendasi4){
+        if (Pilihan4) {
             PirelliStandar()
         }
-
 
     }
 }

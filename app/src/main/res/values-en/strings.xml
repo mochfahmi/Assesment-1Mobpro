@@ -1,4 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Tire Recomendation</string>
+    <string name="app_intro">We will help find tire options for you.\n\nEnter tire brand:</string>
+    <string name="pilih_jenis">Select tire type:</string>
+    <string name="merek_ban">Merk (Corsa or Pirelli)</string>
+    <string name="ban_standar">Standard</string>
+    <string name="ban_racing">Racing</string>
+    <string name="cari_ban">Search</string>
+    <string name="tentang_aplikasi">About the application</string>
+    <string name="copyright">This application was created to make it easier for users who are looking for motorbike tires. The application will display several relevant tire options based on the brand and type of tire (standard or racing) entered by the user.\n\nCopyright © 2024 Mochamad Fahmi K.\nAll rights reserved.</string>
+    <string name="kembali">Back</string>
+    <string name="corsa_racing">CORSA RACING TIRE CHOICE</string>
+    <string name="isi_corsa_racing">
+        1.Corsa R26\n
+        2.Corsa R46\n
+        3.Corsa R93
+       </string>
+    <string name="corsa_standar">STANDARD CORSA TIRE CHOICES</string>
+    <string name="isi_corsa_standar">
+        1. Ecomax H01\n
+        2. Planeto XE-30\n
+        3. B-Track</string>
+    <string name="Pirelli_racing">PIRELLI RACING TIRE CHOICES</string>
+    <string name="isi_Pirelli_racing">
+        1.Pirelli Diablo Rosso Corsa\n
+        2.Pirelli Diablo Super Corsa\n
+        3.Pirelli Diablo Rosso III</string>
+    <string name="Pirelli_standar">STANDARD PIRELLI TIRE CHOICE</string>
+    <string name="isi_Pirelli_standar">
+        1.Pirelli Scorpion MX Extra J \n
+        2.Pirelli MT75\n
+        3.Pirelli Angel City</string>
+    <string name="bagikan">Share</string>
 </resources>
