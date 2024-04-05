@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rekomenedasi Ban</string>
+    <string name="app_intro">Kami akan membantu mencarikan rekomendasi ban untukmu.  Masukkan merek ban:</string>
+    <string name="pilih_tipe">Pilih tipe ban:</string>
+    <string name="merek_ban">Merek (Corsa atau Pirelli)</string>
+    <string name="ban_standar">Standar</string>
+    <string name="ban_racing">Balap</string>
+    <string name="lihat_rekomendasi">Lihat Rekomendasi</string>
+    <string name="tentang_aplikasi">Tentang Aplikasi</string>
+    <string name="copyright">Aplikasi ini dibuat untuk memudahkan pengguna yang sedang mencari rekomendasi ban motor. Aplikasi akan menampilkan beberapa rekomendasi ban yang relevan merdasarkan inputan merek dan tipe mobil (standar atau racing) yang telah dimasukkan olehpengguna.  Copyright © 2024 Mochamad Fahmi K. All rights reserved.</string>
+    <string name="kembali">Kembali</string>
+    <string name="corsa_racing">"REKOMENDASI BAN CORSA RACING "</string>
+</resources>
