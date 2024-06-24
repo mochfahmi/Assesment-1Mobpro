@@ -1,33 +1,36 @@
 <resources>
-    <string name="app_name">Rekomendasi ban</string>
-    <string name="app_intro">Kami akan membantu mencarikan pilihan ban untukmu.\n\nMasukkan merek ban:</string>
-    <string name="pilih_jenis">Pilih jenis ban:</string>
-    <string name="merek_ban">Merek (Corsa atau Pirelli)</string>
-    <string name="ban_standar">Standar</string>
-    <string name="ban_racing">Balap</string>
-    <string name="cari_ban">Cari</string>
-    <string name="tentang_aplikasi">Tentang Aplikasi</string>
-    <string name="copyright">Aplikasi ini dibuat untuk memudahkan pengguna yang sedang mencari ban motor. Aplikasi ini menyediakan beberapa pilihan ban berdasarkan inputan merek dan jenis ban (standar atau racing) yang telah dimasukkan oleh pengguna.\n\nCopyright © 2024 Mochamad Fahmi K.\nAll rights reserved.</string>
-    <string name="kembali">Kembali</string>
-    <string name="corsa_racing">PILIHAN BAN CORSA RACING\n</string>
-    <string name="isi_corsa_racing">
-        1.Corsa R26\n
-        2.Corsa R46\n
-        3.Corsa R93</string>
-    <string name="corsa_standar">PILIHAN BAN CORSA STANDAR\n</string>
+    <string name="app_name">Tire Recomendation</string>
+    <string name="app_intro">We will help find tire options for you.</string>
+    <string name="merek_ban">Enter tire brand:</string>
+    <string name="ban_standar">Standard</string>
+    <string name="ban_racing">Racing</string>
+    <string name="cari_ban">Search</string>
+    <string name="tentang_aplikasi">About the application</string>
+    <string name="copyright">This application was created to make it easier for users who are looking for motorbike tires. This application provides several tire options based on the brand and type of tire (standard or racing) entered by the user.</string>
+    <string name="corsa_racing">CORSA RACING TIRE RECOMMENDATIONS</string>
+    <string name="corsa_standar">STANDARD CORSA TIRE CHOICES</string>
     <string name="isi_corsa_standar">
         1.Ecomax H01\n
         2. Planeto XE-30\n
         3. B-Track</string>
-    <string name="Pirelli_racing">PILIHAN BAN PIRELLI RACING\n</string>
+    <string name="Pirelli_racing">PIRELLI RACING TIRE CHOICES</string>
     <string name="isi_Pirelli_racing">
         1.Pirelli Diablo Rosso Corsa\n
         2.Pirelli Diablo Super Corsa\n
         3.Pirelli Diablo Rosso III</string>
-    <string name="Pirelli_standar">PILIHAN BAN PIRELLI STANDAR\n</string>
+    <string name="Pirelli_standar">STANDARD PIRELLI TIRE CHOICE</string>
     <string name="isi_Pirelli_standar">
         1.Pirelli Scorpion MX Extra J \n
         2.Pirelli MT75\n
         3.Pirelli Angel City</string>
-    <string name="bagikan">Bagikan</string>
+    <string name="bagikan">Share</string>
+    <string name="kembali">Back</string>
+    <string name="pilih_jenis">Select tire type:</string>
+    <string name="invalid_input">Can not be empty</string>
+    <string name="error_merk">Choose a tire brand first</string>
+    <string name="error_jenis">Select the type of tire first</string>
+    <string name="isi_corsa_racing">
+        1.Corsa R26\n
+        2.Corsa R46\n
+        3.Corsa R93</string>
 </resources>

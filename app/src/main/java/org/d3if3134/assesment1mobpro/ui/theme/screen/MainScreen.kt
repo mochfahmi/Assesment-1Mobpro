@@ -1,4 +1,4 @@
-package org.d3if3134.assesment1mobpro.ui.screen
+package org.d3if3134.assesment1mobpro.ui.theme.screen
 
 import android.content.Context
 import android.content.Intent
@@ -9,13 +9,13 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.KeyboardActions
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.Button
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -23,6 +23,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.*
@@ -42,7 +43,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import org.d3if3134.assesment1mobpro.R
 import org.d3if3134.assesment1mobpro.navigation.Screen
-import org.d3if3134.assesment1mobpro.ui.theme.Assesment1MobproTheme
 import org.d3if3134.assesment1mobpro.ui.theme.Assesment1MobproTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -79,15 +79,25 @@ fun MainScreen(navController: NavHostController){
 }
 
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ScreenContent(modifier: Modifier) {
     var merek by rememberSaveable { mutableStateOf("") }
+    var merkError by rememberSaveable { mutableStateOf(false) }
     var jenis by rememberSaveable { mutableStateOf("") }
+    var jenisError by rememberSaveable { mutableStateOf(false) }
     var Pilihan1 by rememberSaveable { mutableStateOf(false) }
     var Pilihan2 by rememberSaveable { mutableStateOf(false) }
     var Pilihan3 by rememberSaveable { mutableStateOf(false) }
     var Pilihan4 by rememberSaveable { mutableStateOf(false) }
+    var Pilihan5 by rememberSaveable { mutableStateOf(false) }
+    var Pilihan6 by rememberSaveable { mutableStateOf(false) }
+    var Pilihan7 by rememberSaveable { mutableStateOf(false) }
+    var Pilihan8 by rememberSaveable { mutableStateOf(false) }
 
+    var isExpanded by remember {
+        mutableStateOf(false)
+    }
     var isInputValid by rememberSaveable { mutableStateOf(true) }
 
     val radioOptions = listOf(
@@ -96,7 +106,7 @@ fun ScreenContent(modifier: Modifier) {
     )
     val context = LocalContext.current
 
-    
+
 
     Column (
         modifier = modifier
@@ -111,16 +121,43 @@ fun ScreenContent(modifier: Modifier) {
             modifier = Modifier.fillMaxWidth()
         )
 
-        // OutlinedTextField untuk merek
-        OutlinedTextField(
-            value = merek,
-            onValueChange = { value ->
-                merek = value
-            },
-            label = { Text(text = stringResource(R.string.merek_ban))},
-            singleLine = true,
-            modifier = Modifier.fillMaxWidth(),
-        )
+        // Dropdown untuk merek
+        Box(contentAlignment = Alignment.Center) {
+            ExposedDropdownMenuBox(
+                expanded = isExpanded,
+                onExpandedChange = {isExpanded = it})
+            {
+                TextField(
+                    value = merek,
+                    onValueChange = {},
+                    readOnly = true,
+                    trailingIcon = {},
+                    modifier = Modifier.menuAnchor()
+                )
+
+                ExposedDropdownMenu(expanded = isExpanded, onDismissRequest = { isExpanded = false }) {
+                    DropdownMenuItem(text = { Text(text = "Corsa")}, onClick = {
+                        merek = "Corsa"
+                        isExpanded = false
+                    })
+                    DropdownMenuItem(text = { Text(text = "Pirelli")}, onClick = {
+                        merek = "Pirelli"
+                        isExpanded = false
+                    })
+                }
+            }
+        }
+
+        // Supporting text jika dropdown kosong
+        if (merkError) {
+            Text(
+                text = stringResource(id = R.string.error_merk),
+                style = MaterialTheme.typography.bodyMedium,
+                color = Color.Red,
+                modifier = Modifier.padding(top = 4.dp)
+            )
+        }
+
         Text(text = stringResource(id = R.string.pilih_jenis), style = MaterialTheme.typography.bodyLarge,
             modifier = Modifier
                 .fillMaxWidth()
@@ -152,11 +189,21 @@ fun ScreenContent(modifier: Modifier) {
             }
         }
 
+        if (jenisError) {
+            Text(
+                text = stringResource(id = R.string.error_merk),
+                style = MaterialTheme.typography.bodyMedium,
+                color = Color.Red,
+                modifier = Modifier.padding(top = 4.dp)
+            )
+        }
 
 
         // Button menampilkan pilihan
         Button(
             onClick = {
+                merkError = (merek == "")
+                jenisError = (jenis == "")
                 // Reset input validation
                 isInputValid = true
 
@@ -165,10 +212,18 @@ fun ScreenContent(modifier: Modifier) {
                     isInputValid = false
                 } else {
                     // Menampilkan pilihan sesuai inputan
+//                    PILIHAN 2
                     Pilihan1 = (merek.lowercase() == "corsa" && jenis.lowercase() == "racing")
+                    Pilihan5 = (merek.lowercase() == "corsa" && jenis.lowercase() == "balap")
+//                    PILIHAN 2
                     Pilihan2 = (merek.lowercase() == "corsa" && jenis.lowercase() == "standard")
+                    Pilihan6 = (merek.lowercase() == "corsa" && jenis.lowercase() == "standar")
+//                    PILIHAN 3
                     Pilihan3 = (merek.lowercase() == "pirelli" && jenis.lowercase() == "racing")
+                    Pilihan7 = (merek.lowercase() == "pirelli" && jenis.lowercase() == "balap")
+//                    PILIHAN 4
                     Pilihan4 = (merek.lowercase() == "pirelli" && jenis.lowercase() == "standard")
+                    Pilihan8 = (merek.lowercase() == "pirelli" && jenis.lowercase() == "standar")
                 }
             },
             modifier = Modifier.padding(top = 20.dp)
@@ -201,6 +256,14 @@ fun ScreenContent(modifier: Modifier) {
 
     }
 }
+
+@Composable
+fun ErrorHint(isError: Boolean){
+    if (isError){
+        Text(text = stringResource(R.string.invalid_input))
+    }
+}
+
 private fun shareData(context: Context, massage: String) {
     val shareIntent = Intent(Intent.ACTION_SEND).apply {
         type = "text/plain"

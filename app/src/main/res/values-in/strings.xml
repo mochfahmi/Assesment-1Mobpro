@@ -5,7 +5,7 @@
     <string name="isi_corsa_racing">
         1.Corsa R26\n
         2.Corsa R46\n
-        3.Corsa R93</string>
+        3.Corsa R93"</string>
     <string name="corsa_standar">"PILIHAN BAN CORSA STANDAR "</string>
     <string name="isi_corsa_standar">
         1.Ecomax H01\n
@@ -31,4 +31,7 @@
     <string name="copyright">Aplikasi ini dibuat untuk memudahkan pengguna yang sedang mencari ban motor. Aplikasi ini menyediakan beberapa pilihan ban berdasarkan inputan merek dan jenis ban (standar atau racing) yang telah dimasukkan oleh pengguna.\n\nCopyright © 2024 Mochamad Fahmi K.\nAll rights reserved.</string>
     <string name="kembali">Kembali</string>
     <string name="corsa_racing">"REKOMENDASI BAN CORSA RACING "</string>
+    <string name="invalid_input">Tidak Boleh Kosong</string>
+    <string name="error_merk">Pilih merek ban terlebih dahulu</string>
+    <string name="error_jenis">Pilih jenis ban terlebih dahulu</string>
 </resources>
