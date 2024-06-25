@@ -15,7 +15,9 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.Button
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -23,6 +25,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.*
@@ -79,6 +82,7 @@ fun MainScreen(navController: NavHostController){
 }
 
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ScreenContent(modifier: Modifier) {
     var merek by rememberSaveable { mutableStateOf("") }
@@ -87,6 +91,10 @@ fun ScreenContent(modifier: Modifier) {
     var Pilihan2 by rememberSaveable { mutableStateOf(false) }
     var Pilihan3 by rememberSaveable { mutableStateOf(false) }
     var Pilihan4 by rememberSaveable { mutableStateOf(false) }
+    var Pilihan5 by rememberSaveable { mutableStateOf(false) }
+    var Pilihan6 by rememberSaveable { mutableStateOf(false) }
+    var Pilihan7 by rememberSaveable { mutableStateOf(false) }
+    var Pilihan8 by rememberSaveable { mutableStateOf(false) }
 
     var isInputValid by rememberSaveable { mutableStateOf(true) }
 
@@ -95,6 +103,9 @@ fun ScreenContent(modifier: Modifier) {
         stringResource(id = R.string.ban_standar)
     )
     val context = LocalContext.current
+    var isExpanded by remember {
+        mutableStateOf(false)
+    }
 
     
 
@@ -112,15 +123,31 @@ fun ScreenContent(modifier: Modifier) {
         )
 
         // OutlinedTextField untuk merek
-        OutlinedTextField(
-            value = merek,
-            onValueChange = { value ->
-                merek = value
-            },
-            label = { Text(text = stringResource(R.string.merek_ban))},
-            singleLine = true,
-            modifier = Modifier.fillMaxWidth(),
-        )
+        Box(contentAlignment = Alignment.Center) {
+            ExposedDropdownMenuBox(
+                expanded = isExpanded,
+                onExpandedChange = {isExpanded = it})
+            {
+                TextField(
+                    value = merek,
+                    onValueChange = {},
+                    readOnly = true,
+                    trailingIcon = {},
+                    modifier = Modifier.menuAnchor()
+                )
+
+                ExposedDropdownMenu(expanded = isExpanded, onDismissRequest = { isExpanded = false }) {
+                    DropdownMenuItem(text = { Text(text = "Corsa")}, onClick = {
+                        merek = "Corsa"
+                        isExpanded = false
+                    })
+                    DropdownMenuItem(text = { Text(text = "Pirelli")}, onClick = {
+                        merek = "Pirelli"
+                        isExpanded = false
+                    })
+                }
+            }
+        }
         Text(text = stringResource(id = R.string.pilih_jenis), style = MaterialTheme.typography.bodyLarge,
             modifier = Modifier
                 .fillMaxWidth()
