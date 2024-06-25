@@ -13,12 +13,12 @@
         1.Ecomax H01\n
         2. Planeto XE-30\n
         3. B-Track</string>
-    <string name="Pirelli_racing">PIRELLI RACING TIRE CHOICES</string>
+    <string name="Pirelli_racing">PILIHAN BAN PIRELLI RACING\n</string>
     <string name="isi_Pirelli_racing">
         1.Pirelli Diablo Rosso Corsa\n
         2.Pirelli Diablo Super Corsa\n
         3.Pirelli Diablo Rosso III</string>
-    <string name="Pirelli_standar">STANDARD PIRELLI TIRE CHOICE</string>
+    <string name="Pirelli_standar">PILIHAN BAN PIRELLI STANDAR\n</string>
     <string name="isi_Pirelli_standar">
         1.Pirelli Scorpion MX Extra J \n
         2.Pirelli MT75\n
