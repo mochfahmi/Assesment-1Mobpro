@@ -232,6 +232,19 @@ fun ScreenContent(modifier: Modifier) {
         if (Pilihan4) {
             PirelliStandar()
         }
+        if (Pilihan5) {
+            CorsaRacing()
+        }
+        if (Pilihan6) {
+            CorsaStandar()
+        }
+        if (Pilihan7) {
+            PirelliStandar()
+        }
+        if (Pilihan8) {
+            PirelliRacing()
+        }
+
 
     }
 }
